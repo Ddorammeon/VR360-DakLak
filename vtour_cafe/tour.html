@@ -133,5 +133,42 @@
       <a class="item" href="" target="_blank">PTIT CIE</a>
       <div class="hover_bg"></div>
     </div>
+    <!-- audio -->
+    <audio
+      id="background-music"
+      src="../audio/good-night-160166.mp3"
+      preload="auto"
+      loop
+    ></audio>
+    <button id="music-toggle" class="">Off</button>
+    <script>
+      // audio
+      const audio = document.getElementById("background-music");
+      const toggleButton = document.getElementById("music-toggle");
+
+      function updateButton() {
+        if (audio.paused) {
+          toggleButton.classList.remove("audioActive");
+          toggleButton.textContent = "Off";
+        } else {
+          toggleButton.textContent = "On";
+          toggleButton.classList.add("audioActive");
+        }
+      }
+
+      toggleButton.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+        updateButton();
+      });
+
+      audio.addEventListener("play", updateButton);
+      audio.addEventListener("pause", updateButton);
+
+      updateButton();
+    </script>
   </body>
 </html>

@@ -133,63 +133,42 @@
       <a class="item" href="" target="_blank">PTIT CIE</a>
       <div class="hover_bg"></div>
     </div>
-    <!-- <section class="show-modal">
-      <img src="../images/6b534f389bdf7c89fdb6d60b87f5792c.jpg" alt="" />
-    </section>
-    <section class="form--popup active">
-      <div id="popupbox">
-        <img src="../images/close.svg" alt="" class="popup__btn close-btn" />
-        <h2 class="popup__heading">Đăng ký nhận tư vấn thành công</h2>
-        <p class="popup__desc">
-          Vui lòng để ý điện thoại. Trung tâm Đào tạo Quốc tế sẽ sớm liên hệ lại
-          qua số điện thoại bạn cung cấp để tư vấn kĩ hơn về chương trình. Nếu
-          bạn có câu hỏi gì có thể liên hệ với chúng tôi qua:
-        </p>
-      </div>
-    </section> -->
+    <!-- audio -->
+    <audio
+      id="background-music"
+      src="../audio/good-night-160166.mp3"
+      preload="auto"
+      loop
+    ></audio>
+    <button id="music-toggle" class="">Off</button>
+    <script>
+      // audio
+      const audio = document.getElementById("background-music");
+      const toggleButton = document.getElementById("music-toggle");
 
-    <!-- <script>
-      // popup --
-      document.addEventListener("DOMContentLoaded", () => {
-        const section = document.querySelector(".form--popup"),
-          showBtn = document.querySelector(".show-modal"),
-          closeBtn = document.querySelector(".close-btn");
-        showBtn.addEventListener("click", () =>
-          section.classList.add("active")
-        );
-        closeBtn.addEventListener("click", () =>
-          section.classList.remove("active")
-        );
-
-        // Update popup content based on the scene name
-        function updatePopupContent(sceneName) {
-          const heading = document.querySelector(".popup__heading");
-          const desc = document.querySelector(".popup__desc");
-
-          // Get the scene attributes for heading and desc
-          const sceneHeading = krpano.get(`scene[${sceneName}].heading`);
-          const sceneDesc = krpano.get(`scene[${sceneName}].desc`);
-
-          if (sceneHeading && sceneDesc) {
-            heading.textContent = sceneHeading;
-            desc.textContent = sceneDesc;
-          } else {
-            heading.textContent = "Unknown Scene";
-            desc.textContent = "This scene is not recognized.";
-          }
+      function updateButton() {
+        if (audio.paused) {
+          toggleButton.classList.remove("audioActive");
+          toggleButton.textContent = "Off";
+        } else {
+          toggleButton.textContent = "On";
+          toggleButton.classList.add("audioActive");
         }
+      }
 
-        // Initialize KRpano
-        krpano.addEventListener("onscenechange", () => {
-          const sceneName = krpano.get("xml.scene");
-          updatePopupContent(sceneName);
-          section.classList.add("active"); // Show the popup when scene changes
-        });
-
-        // Trigger initial content update
-        const initialScene = krpano.get("xml.scene");
-        updatePopupContent(initialScene);
+      toggleButton.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+        updateButton();
       });
-    </script> -->
+
+      audio.addEventListener("play", updateButton);
+      audio.addEventListener("pause", updateButton);
+
+      updateButton();
+    </script>
   </body>
 </html>
