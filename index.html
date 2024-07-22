@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VR360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- <link rel="stylesheet" href="./reset.css" /> -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-15x15.png"
+    />
+    <link rel="manifest" href="/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <main>
+      <div id="map"></div>
+      <div id="top_menu">
+        <div class="item"><a href="./">Home</a></div>
+        <a
+          class="item social"
+          href="https://cie.ptit.edu.vn/vlir/"
+          target="_blank"
+          >Vlir.si</a
+        >
+        <a class="item" href="https://cie.ptit.edu.vn/" target="_blank"
+          >PTIT CIE</a
+        >
+        <div class="hover_bg"></div>
+      </div>
+      <section class="show-modal">
+        <img src="./images/Logo-VLIR-Partners.png" alt="" />
+      </section>
+      <section class="form--popup active">
+        <div id="popupbox">
+          <svg
+            class="popup__btn close-btn"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.94 0L12 1.06L7.06 6L12 10.94L10.94 12L6 7.06L1.06 12L0 10.94L4.94 6L0 1.06L1.06 0L6 4.94L10.94 0Z"
+              fill="#B2B4B2"
+            ></path>
+          </svg>
+          <!-- audio -->
+          <audio
+            id="background-music"
+            src="./audio/good-night-160166.mp3"
+            preload="auto"
+            loop
+          ></audio>
+          <button id="music-toggle" class="">Off</button>
+          <h2 class="popup__heading">
+            Khám phá Ninh Bình: Vẻ đẹp thiên nhiên và văn hoá
+          </h2>
+          <p class="popup__desc">
+            Ninh Bình, một tỉnh nằm ở phía Bắc Việt Nam, là một nơi có cảnh quan
+            hoang sơ và hùng vĩ. Bắt đầu hành trình khám phá Ninh Bình để đi tìm
+            những vẻ đẹp tiềm ẩn của thiên nhiên và đắm chìm trong văn hoá địa
+            phương đặc sắc và sống động
+          </p>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
