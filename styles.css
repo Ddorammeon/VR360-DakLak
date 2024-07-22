@@ -285,13 +285,15 @@ main.thematic #top_menu {
 
 
 .show-modal img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 200px;
     position: absolute;
     z-index: 3;
-    bottom: 45px;
+    bottom: -30px;
     right: 50px;
-    border-radius: 50%;
+    object-fit: contain;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
 .form--popup {
@@ -309,7 +311,7 @@ img.show-modal,
     top: 50%;
     transform: translate(-50%, -50%); */
     right: 45px;
-    bottom: 165px;
+    bottom: 105px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
